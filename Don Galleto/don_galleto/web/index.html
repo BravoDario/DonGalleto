@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Don Galleto - Inicio</title>
+        <link rel="stylesheet" href="style/index.css" />
+        <link rel="stylesheet" href="style/venta.css"/>
+        <link rel="stylesheet" href="style/inventario.css"/>
+        <link rel="stylesheet" href="style/receta.css"/>
+        <link rel="stylesheet" href="style/reporte.css"/>
+        <link rel="stylesheet" href="style/merma.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/187adaaceb.js" crossorigin="anonymous"></script>
+    </head> 
+    <body>
+        <div class="content-dg">
+            <img class="img-logo-dg" src="img/LOGO_DONGALLETO_SF.webp"/>
+            <h1 class="title-dg">&nbsp;&nbsp;GALLETERIA DON GALLETO</h1>
+            <i class="fa-solid fa-layer-group"></i>
+            <h5>M&oacute;dulo de M&eacute;nu</h5>
+        </div>
+        <div class="nav">
+            <div class="container-fluid">
+                <a class="nav-link" href="#" role="button" onclick="cargarModuloVenta();">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <b>Ventas</b>
+                </a>
+                <a class="nav-link" href="#" role="button" onclick="cargarModuloInventario();">
+                    <i class="fa-solid fa-warehouse"></i>
+                    <b>Inventario</b>
+                </a>
+                <a class="nav-link" href="#" role="button" onclick="cargarModuloReceta()">
+                    <i class="fa-solid fa-book"></i>
+                    <b>Receta</b>
+                </a>
+                <a class="nav-link" href="#" role="button" onclick="cargarModuloReporte()">
+                    <i class="fa-solid fa-folder"></i>
+                    <b>Reporte</b>
+                </a>
+                <a class="nav-link" href="#" role="button" onclick="cargarModuloMerma()">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                    <b>Merma</b>
+                </a>
+            </div>
+        </div>
+        <div id="contenedor_principal" class="contenido-pag">
+            <div class="logo-principal">
+                <img class="logo-p-dg" src="img/LOGO_DONGALLETO_SF.webp" />
+            </div>
+        </div>
+        <script src="admin/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<html lang="es">
+    <body>
+        <div class="table-merma" id="table-merma">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Ingrediente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Galleta1</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta2</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta3</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta4</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta5</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta6</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta7</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta8</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta9</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Galleta10</td>
+                        <td>--------</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-material" id="table-material" style="display: none">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Material</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Material1</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material2</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material3</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material4</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material5</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material6</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material7</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material8</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material9</td>
+                        <td>--------</td>
+                    </tr>
+                    <tr>
+                        <td>Material10</td>
+                        <td>--------</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content-btn-merma">
+            <button class="btn-merma">
+                <b><i class="fa-solid fa-floppy-disk"></i></b>
+            </button>
+            <button class="btn-merma" id="verMermaBtn" onclick="cm.verMerma(); this.classList.toggle('active-btn'); verMaterialBtn.classList.remove('active-btn');">
+                <b>Ver merma</b>
+            </button>
+            <button class="btn-merma" id="verMaterialBtn" onclick="cm.verMaterial(); this.classList.toggle('active-btn'); verMermaBtn.classList.remove('active-btn');">
+                <b>Ver material</b>
+            </button>
+        </div>
+        <script src="../js/merma.js"></script>
+    </body>
+</html>

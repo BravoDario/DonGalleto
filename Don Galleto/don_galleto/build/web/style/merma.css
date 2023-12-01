@@ -1,0 +1,156 @@
+/* 
+    Created on : 23 nov. 2023, 11:43:37
+    Author     : Angel
+*/
+
+/*ASPECTOS GENERALES*/
+body {
+  background-color: #fbe5d6;
+  font-family: "Righteous", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*ENCABEZADO - TITULO WEB - MODULO - IMG*/
+.content-dg {
+  align-items: center;
+  background-color: #442d21;
+  border-bottom: 6px #c55a11 solid;
+  color: #fbe5d6;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/*icono ubicacion*/
+.content-dg i {
+  color: #fbe5d6;
+}
+
+/*IMAGEN SITIO WEB*/
+.img-logo-dg {
+  height: 55px;
+  width: 80px;
+}
+
+/*TITULO SITIO WEB*/
+.title-dg {
+  font-size: 25px;
+  letter-spacing: 18px;
+  margin: auto;
+}
+
+/*BARRA DE NAVEGACION DE MODULOS*/
+.nav {
+  background-color: #eda053;
+  border-bottom: 2px #442d21 solid; /* Cafe Oscuro */
+  border-top: 17px #6f2d14 solid; /* Cafe Oscuro */
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/*ORIENTACION DE BARRA DE NAVEGACION */
+.container-fluid {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/*ROLE BUTTON BARRA DE NAVEGACION */
+.nav-link {
+  align-items: center;
+  border-right: 3px solid #6f2d14;
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding: 0 75px; 
+  text-align: center;
+  text-decoration: none;
+}
+
+/*QUITAR ULTIMA LINEA VERTICAL DE BARRA NAVEGACION*/
+.nav-link:last-child {
+  border-right: none;
+}
+
+/*ICONOS*/
+i {
+  color: #442d21;
+  font-size: 25px;
+  margin-right: 3px;
+}
+
+/*SCROLL TABLA MERMA Y TAMAÑOS*/
+.table-merma {
+  height: 250px;
+  margin: 50px auto;
+  max-width: 800px;
+  overflow-y: auto;
+}
+
+/*SCROLL TABLA MERMA Y TAMAÑOS*/
+.table-material {
+  height: 250px;
+  margin: 50px auto;
+  max-width: 800px;
+  overflow-y: auto;
+}
+
+/*ORIENTACION DE TABLA*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*ESTILOS ENCABEZADOS TABLA*/
+.table-merma thead th {
+  background-color: #6f2d14;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+/*ESTILOS ENCABEZADOS TABLA*/
+.table-material thead th {
+  background-color: #6f2d14;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+/*ESTILOS CELDAS TABLA*/
+th,
+td {
+  background-color: white;
+  border: 1px solid black;
+  padding: 8px 16px;
+}
+
+/*ORIENTACION DE BOTONES */
+.content-btn-merma {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/*ESTILOS Y TAMAÑOS DE BOTONES */
+.btn-merma {
+  background-color: #bf8441;
+  border: 2px solid #976e35;
+  color: black;
+  cursor: pointer;
+  height: 50px;
+  margin: 25px 50px;
+  padding: 10px 20px;
+  width: 100px;
+}
+
+/*DIFERENCIADOR DE BOTON ACTIVO */
+.active-btn {
+  background-color: #956b3b;
+  color: white;
+}
