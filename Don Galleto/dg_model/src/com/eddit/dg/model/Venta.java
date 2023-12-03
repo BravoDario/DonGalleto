@@ -11,7 +11,6 @@ public class Venta {
     private int idVenta;
     private String fecha_venta;
     private int total_venta;
-    private List<DetalleVenta> detallesVentas;
 
     public Venta() {
     }
@@ -20,15 +19,6 @@ public class Venta {
         this.idVenta = idVenta;
         this.fecha_venta = fecha_venta;
         this.total_venta = total_venta;
-        this.detallesVentas = detallesVentas;
-    }
-
-    public List<DetalleVenta> getDetallesVentas() {
-        return detallesVentas;
-    }
-
-    public void setDetallesVentas(List<DetalleVenta> detallesVentas) {
-        this.detallesVentas = detallesVentas;
     }
 
     public int getIdVenta() {
