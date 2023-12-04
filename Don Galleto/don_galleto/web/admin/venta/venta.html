@@ -47,12 +47,23 @@
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <p id="modalText"></p>
+                <input type="number" placeholder="cantidad">
+                <label id="txtmet"></label>
+                <br>
+                <input placeholder="galletas totales" disabled="">
+                <br>
                 <button onclick="cm.closeModal()">Cerrar</button>
                 <button onclick="cm.addToTable()">Aceptar</button>
             </div>
         </div>
         <div>
             <table id="imageTable">
+                <tr>
+                    <td>Nombre</td>
+                    <td>Cantidad</td>
+                    <td>Precio</td>
+                    
+                </tr>
             </table>
         </div>
     </body>
