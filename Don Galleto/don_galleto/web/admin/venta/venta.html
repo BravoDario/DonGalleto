@@ -44,27 +44,29 @@
                 <b><i class="fa-solid fa-floppy-disk"></i></b>
             </button>
         </div>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <p id="modalText"></p>
-                <input type="number" placeholder="cantidad">
-                <label id="txtmet"></label>
-                <br>
-                <input placeholder="galletas totales" disabled="">
-                <br>
-                <button onclick="cm.closeModal()">Cerrar</button>
-                <button onclick="cm.addToTable()">Aceptar</button>
-            </div>
-        </div>
         <div>
             <table id="imageTable">
                 <tr>
                     <td>Nombre</td>
-                    <td>Cantidad</td>
+               <     <td>Cantidad</td>
                     <td>Precio</td>
                     
                 </tr>
             </table>
         </div>
+        <!-- VENTANA MODAL -->
+        <section class="modal">
+            <div class="modal-contenido">
+                <p id="modalText" class="modal-paragraph">---</p>
+                <div class="columna-venta-modal">
+                <input type="number" placeholder="cantidad" class="input-modal">
+                <input placeholder="galletas totales" disabled="" class="input-modal">
+                </div>
+                <div class="columna-venta-modal">
+                <button class="modal-close button-modal"><span>Cerrar</span></button>
+                <button class="modal-close button-modal"><span>Aceptar</span></button>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
