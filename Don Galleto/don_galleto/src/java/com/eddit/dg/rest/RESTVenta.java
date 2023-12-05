@@ -24,11 +24,11 @@ public class RESTVenta {
         Gson gson = new Gson();
         DetalleVenta d = null;
         ControllerVenta cv = new ControllerVenta();
-
+        
         try {
 
             d = gson.fromJson(datos, DetalleVenta.class);
-
+            
             cv.generarVenta(d);
 
             out = gson.toJson(d);
