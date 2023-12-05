@@ -26,25 +26,33 @@ public class ControllerVenta {
         try {
 
             conn.setAutoCommit(false);
-            String query1 = "INSERT INTO venta (fecha_venta,total_venta) VALUE (" + dv.getVenta().getFecha_venta() + ",'" + dv.getVenta().getTotal_venta()+ "');";
+
+            String query1 = "INSERT INTO venta (fecha_venta,total_venta) VALUES ('" + dv.getVenta().getFecha_venta() + "','" + dv.getVenta().getTotal_venta() + "');";
             stmt = conn.createStatement();
+
             stmt.execute(query1);
             rs = stmt.executeQuery("SELECT LAST_INSERT_ID();");
 
             if (rs.next()) {
-               dv.getVenta().setIdVenta(rs.getInt(1));
+                dv.getVenta().setIdVenta(rs.getInt(1));
             }
 
             for (int i = 0; i < dv.getVg().size(); i++) {
-                
-                String query2 = "INSERT INTO detalle_venta VALUES("  
+
+                String query2 = "INSERT INTO detalle_venta(cantidad,tipo_venta,idGalleta,venta_idVenta) VALUES("
                         + dv.getVg().get(i).getCantidad() + ","
                         + dv.getVg().get(i).getTipo_venta() + ","
-                        + dv.getVg().get(i).getGalletas().getIdGalleta()
-                        + dv.getVenta().getIdVenta() +");";
+                        + dv.getVg().get(i).getGalletas().getIdGalleta() + ","
+                        + dv.getVenta().getIdVenta() + ");";
                 
-                String query3 = "UPDATE inventario SET existencia = existencia - "+dv.getVg().get(i).getCantidad()+" where idInventario = "+dv.getVg().get(i).getGalletas().getInventario().getIdInventario();
+                String query3 = "UPDATE inventario SET existencia = existencia - " + dv.getVg().get(i).getCantidad() + " where idInventario = " + dv.getVg().get(i).getGalletas().getInventario().getIdInventario();
+                
+
                 stmt.execute(query2);
+                rs = stmt.executeQuery("SELECT LAST_INSERT_ID();");
+                if (rs.next()) {
+                    dv.getVg().get(i).setIdVenta_galleta(rs.getInt(1));
+                }
                 stmt.execute(query3);
             }
 
