@@ -39,18 +39,20 @@
             <button data-name="D" class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>U PIEZA</b></button>
         </div>
         <div class="total-bar-venta">
-            <input type="text" class="input-total-venta" placeholder="Total: $" />
+            <input id="inptotalprecio" type="text" class="input-total-venta" placeholder="Total: $" />
             <button class="guardar-button-venta">
                 <b><i class="fa-solid fa-floppy-disk"></i></b>
             </button>
         </div>
+        <br>
+        <br>
         <div>
             <table id="imageTable">
                 <tr>
                     <td>Nombre</td>
-               <     <td>Cantidad</td>
+                    <td>Cantidad</td>
                     <td>Precio</td>
-                    
+
                 </tr>
             </table>
         </div>
@@ -58,13 +60,15 @@
         <section class="modal">
             <div class="modal-contenido">
                 <p id="modalText" class="modal-paragraph">---</p>
+                <p id="modalText2" class="modal-paragraph">---</p>
                 <div class="columna-venta-modal">
-                <input type="number" placeholder="cantidad" class="input-modal">
-                <input placeholder="galletas totales" disabled="" class="input-modal">
+                    <input onchange="cm.cantidadGalleta()" id="inpcant" type="number" placeholder="cantidad" class="input-modal">
+                    <label id="txtmet"></label>
+                    <input id="inptotgal" placeholder="galletas totales" disabled="" class="input-modal">
                 </div>
                 <div class="columna-venta-modal">
-                <button class="modal-close button-modal"><span>Cerrar</span></button>
-                <button class="modal-close button-modal"><span>Aceptar</span></button>
+                    <button class="modal-close button-modal"><span>Cerrar</span></button>
+                    <button class="modal-accept button-modal"><span>Aceptar</span></button>
                 </div>
             </div>
         </section>
