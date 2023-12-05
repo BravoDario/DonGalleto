@@ -1,4 +1,21 @@
 var datosDeGalletas;
+var totalPrecio = 0;
+let totalGalleta;
+
+let val1;
+let val2;
+
+var selectedImages = {
+    'panel1': null,
+    'panel2': null
+};
+
+let galleta;
+//CODIGO VENTANA MODAL
+const openModal = document.querySelector('.guardar-button-venta');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.modal-close');
+const acceptModal = document.querySelector('.modal-accept');
 
 export function inicializarVenta() {
     fetch("../don_galleto/admin/json/galletas.json")
@@ -14,15 +31,15 @@ export function selectImage(imageElement, panelId) {
     selectedImages[panelId] = imageElement;
 
     if (selectedImages['panel1'] && selectedImages['panel2']) {
-        let val1 = selectedImages['panel1'].dataset.name;
-        let val2 = selectedImages['panel2'].dataset.name;
-        let galleta = datosDeGalletas.galletas.find(galleta => galleta.id === val1);
-        console.log(galleta.precio);
+        val1 = selectedImages['panel1'].dataset.name;
+        val2 = selectedImages['panel2'].dataset.name;
+        galleta = datosDeGalletas.galletas.find(galleta => galleta.id === val1);
         let et = document.getElementById("txtmet");
-        
+
         switch (val2) {
             case "A":
                 et.textContent = "pesos";
+
                 break;
             case "B":
                 et.textContent = "gr";
@@ -37,25 +54,36 @@ export function selectImage(imageElement, panelId) {
             default:
                 break;
         }
-
-/*showModal('Las imágenes seleccionadas son ' + selectedImages['panel1'].dataset.name + ' y ' + selectedImages['panel2'].dataset.name);*/
+        document.getElementById("modalText").innerHTML = galleta.nombre;
+        document.getElementById("modalText2").innerHTML = "Precio: "+galleta.precio+" pesos / Peso: "+galleta.peso+" gramos";
+        modal.classList.add('modal--show');
 
     }
 }
 
-        
-/*
-function showModal(text) {
-    document.getElementById('modalText').textContent = text;
-    document.getElementById('myModal').style.display = "block";
-}
-
-export function closeModal() {
-    document.getElementById('myModal').style.display = "none";
-    selectedImages['panel1'].classList.remove('selected');
-    selectedImages['panel2'].classList.remove('selected');
-    selectedImages['panel1'] = null;
-    selectedImages['panel2'] = null;
+export function cantidadGalleta() {
+    let cant = document.getElementById("inpcant").value;
+    let totgat = document.getElementById("inptotgal");
+    switch (val2) {
+        case "A":
+            totalGalleta = Math.floor(cant / galleta.precio);
+            break;
+        case "B":
+            totalGalleta = Math.floor(cant / galleta.peso);
+            break;
+        case "C":
+            totalGalleta = cant * 12;
+            break;
+        case "D":
+            totalGalleta = cant;
+            
+            break;
+            // puedes agregar más casos aquí...
+        default:
+            break;
+    }
+    totgat.value = totalGalleta;
+    totalPrecio = totalPrecio + totalGalleta*galleta.precio;
 }
 
 export function addToTable() {
@@ -64,25 +92,37 @@ export function addToTable() {
     var cell1 = row.insertCell();
     var cell2 = row.insertCell();
     var cell3 = row.insertCell();
-    cell1.textContent = selectedImages['panel1'].dataset.name;
-    cell2.textContent = selectedImages['panel2'].dataset.name;
-    closeModal();
+    cell1.textContent = galleta.nombre;
+    cell2.textContent = totalGalleta;
+    cell3.textContent = totalGalleta*galleta.precio;
 
 }
-*/
 
-
-//CODIGO VENTANA MODAL
-const openModal = document.querySelector('.guardar-button-venta');
-const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.modal-close');
-
-openModal.addEventListener('click', (e)=>{
+openModal.addEventListener('click', (e) => {
     e.preventDefault();
     modal.classList.add('modal--show');
 });
 
-closeModal.addEventListener('click', (e)=>{
+acceptModal.addEventListener('click', (e) => {
     e.preventDefault();
     modal.classList.remove('modal--show');
+    addToTable();
+    selectedImages['panel1'].classList.remove('selected');
+    selectedImages['panel2'].classList.remove('selected');
+    selectedImages['panel1'] = null;
+    selectedImages['panel2'] = null;
+    document.getElementById("inpcant").value = "";
+    document.getElementById("inptotgal").value = "";
+    document.getElementById("inptotalprecio").value = totalPrecio;
+});
+
+closeModal.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+    selectedImages['panel1'].classList.remove('selected');
+    selectedImages['panel2'].classList.remove('selected');
+    selectedImages['panel1'] = null;
+    selectedImages['panel2'] = null;
+    document.getElementById("inpcant").value = "";
+    document.getElementById("inptotgal").value = "";
 });
