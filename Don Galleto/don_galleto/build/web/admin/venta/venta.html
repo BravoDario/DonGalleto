@@ -1,48 +1,76 @@
 <html>
     <body>
         <div class="grid-venta">
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="1" class="item-venta" onclick="cm.selectImage(this, 'panel1')"> 
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta1.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="2" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta2.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="3" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta3.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="4" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta4.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="5" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta5.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="6" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta6.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="7" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta7.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="8" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta8.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="9" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta9.webp" />
             </div>
-            <div class="item-venta" onclick="cm.selectImage(this, 'panel1')">
+            <div data-name="10" class="item-venta" onclick="cm.selectImage(this, 'panel1')">
                 <img class="img-cookie-venta" src="../don_galleto/img/galleta10.webp" />
             </div>
         </div>
         <div class="button-pagos-venta">
-            <button class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>$PESOS</b></button>
-            <button class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>C%PESO</b></button>
-            <button class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>GR CAJA</b></button>
-            <button class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>U PIEZA</b></button>
+            <button data-name="A" class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>$PESOS</b></button>
+            <button data-name="B" class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>C%PESO</b></button>
+            <button data-name="C" class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>GR CAJA</b></button>
+            <button data-name="D" class="item-venta" onclick="cm.selectImage(this, 'panel2')"><b>U PIEZA</b></button>
         </div>
         <div class="total-bar-venta">
-            <input type="text" class="input-total-venta" placeholder="Total: $" />
+            <input id="inptotalprecio" type="text" class="input-total-venta" placeholder="Total: $" />
             <button class="guardar-button-venta">
                 <b><i class="fa-solid fa-floppy-disk"></i></b>
             </button>
         </div>
+        <br>
+        <br>
+        <div>
+            <table id="imageTable">
+                <tr>
+                    <td>Nombre</td>
+                    <td>Cantidad</td>
+                    <td>Precio</td>
+
+                </tr>
+            </table>
+        </div>
+        <!-- VENTANA MODAL -->
+        <section class="modal">
+            <div class="modal-contenido">
+                <p id="modalText" class="modal-paragraph">---</p>
+                <p id="modalText2" class="modal-paragraph">---</p>
+                <div class="columna-venta-modal">
+                    <input onchange="cm.cantidadGalleta()" id="inpcant" type="number" placeholder="cantidad" class="input-modal">
+                    <label id="txtmet"></label>
+                    <input id="inptotgal" placeholder="galletas totales" disabled="" class="input-modal">
+                </div>
+                <div class="columna-venta-modal">
+                    <button class="modal-close button-modal"><span>Cerrar</span></button>
+                    <button class="modal-accept button-modal"><span>Aceptar</span></button>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

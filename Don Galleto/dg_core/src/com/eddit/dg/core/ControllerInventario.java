@@ -17,7 +17,7 @@ public class ControllerInventario {
     public List<Galleta> getInventarioGalletas() throws SQLException {
         ConexionMySQL conn = new ConexionMySQL();
         Connection con = conn.open();
-        String sql = "select * from inventariogalletas";
+        String sql = "SELECT * FROM inventariogalletas";
         PreparedStatement pstmt = con.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
         List<Galleta> galletas = new ArrayList<Galleta>();
@@ -47,7 +47,7 @@ public class ControllerInventario {
     public List<Material> getInventarioMaterial() throws Exception {
         ConexionMySQL conn = new ConexionMySQL();
         Connection con = conn.open();
-        String sql = "select * from inventariomaterial";
+        String sql = "SELECT * FROM inventariomaterial";
         PreparedStatement pstmt = con.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
         List<Material> materiales = new ArrayList<Material>();
