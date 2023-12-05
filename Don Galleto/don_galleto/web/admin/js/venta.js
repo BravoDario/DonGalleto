@@ -6,11 +6,6 @@ export function inicializarVenta() {
             .then(data => datosDeGalletas = data);
 }
 
-var selectedImages = {
-    'panel1': null,
-    'panel2': null
-};
-
 export function selectImage(imageElement, panelId) {
     if (selectedImages[panelId]) {
         selectedImages[panelId].classList.remove('selected');
@@ -43,13 +38,13 @@ export function selectImage(imageElement, panelId) {
                 break;
         }
 
+/*showModal('Las imágenes seleccionadas son ' + selectedImages['panel1'].dataset.name + ' y ' + selectedImages['panel2'].dataset.name);*/
 
-        showModal('Las imágenes seleccionadas son ' + selectedImages['panel1'].dataset.name + ' y ' + selectedImages['panel2'].dataset.name);
     }
 }
 
-
-
+        
+/*
 function showModal(text) {
     document.getElementById('modalText').textContent = text;
     document.getElementById('myModal').style.display = "block";
@@ -74,3 +69,20 @@ export function addToTable() {
     closeModal();
 
 }
+*/
+
+
+//CODIGO VENTANA MODAL
+const openModal = document.querySelector('.guardar-button-venta');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.modal-close');
+
+openModal.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.add('modal--show');
+});
+
+closeModal.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+});
