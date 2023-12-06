@@ -7,25 +7,10 @@ package com.eddit.dg.model;
 public class Reporte {
 
     private int idReporte;
-    private double gasto;
-    private Venta venta;
-
-    public Reporte() {
-    }
-
-    public Reporte(int idReporte, double gasto, Venta venta) {
-        this.idReporte = idReporte;
-        this.gasto = gasto;
-        this.venta = venta;
-    }
-
-    public Venta getVenta() {
-        return venta;
-    }
-
-    public void setVenta(Venta venta) {
-        this.venta = venta;
-    }
+    private int total_cantidad;
+    private double precio;
+    private double precio_total;
+    private double costo;
 
     public int getIdReporte() {
         return idReporte;
@@ -35,12 +20,38 @@ public class Reporte {
         this.idReporte = idReporte;
     }
 
-    public double getGasto() {
-        return gasto;
+    public int getTotal_cantidad() {
+        return total_cantidad;
     }
 
-    public void setGasto(double gasto) {
-        this.gasto = gasto;
+    public void setTotal_cantidad(int total_cantidad) {
+        this.total_cantidad = total_cantidad;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public double getPrecio_total() {
+        return precio_total;
+    }
+
+    public void setPrecio_total(double precio_total) {
+        this.precio_total = precio_total;
+    }
+
+    public double getCosto() {
+        return costo;
+    }
+
+    public void setCosto(double costo) {
+        this.costo = costo;
+    }
+    
+    
 
 }
