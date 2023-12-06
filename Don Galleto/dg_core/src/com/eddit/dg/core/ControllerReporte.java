@@ -18,53 +18,69 @@ import java.util.List;
 public class ControllerReporte {
 
     public List<Reporte> getGrafica(String fecha1, String fecha2, String numero) throws Exception {
+    //La consulta SQL a ejecutar:
+    String sql;
+    if (numero == null || numero.isEmpty()) {
+        sql = "SELECT SUM(detalle_venta.cantidad) AS total_cantidad, SUM(detalle_venta.cantidad) * AVG(galleta.precio) AS precio_total, SUM(detalle_venta.cantidad) * AVG(galleta.precio) * 0.7 AS costo "
+            + "FROM venta "
+            + "JOIN detalle_venta ON venta.idVenta = detalle_venta.venta_idVenta "
+            + "JOIN galleta ON detalle_venta.idGalleta = galleta.idGalleta "
+            + "WHERE venta.fecha_venta BETWEEN ? AND ?";
+    } else {
+        sql = "SELECT SUM(detalle_venta.cantidad) AS total_cantidad, galleta.precio, SUM(detalle_venta.cantidad) * galleta.precio AS precio_total, (SUM(detalle_venta.cantidad) * galleta.precio) * 0.7 AS costo "
+            + "FROM venta "
+            + "JOIN detalle_venta ON venta.idVenta = detalle_venta.venta_idVenta "
+            + "JOIN galleta ON detalle_venta.idGalleta = galleta.idGalleta "
+            + "WHERE venta.fecha_venta BETWEEN ? AND ? "
+            + "AND detalle_venta.idGalleta = ?";
+    }
+
+    //Con este objeto nos vamos a conectar a la Base de Datos:
+    ConexionMySQL connMySQL = new ConexionMySQL();
+
+    //Abrimos la conexión con la Base de Datos:
+    Connection conn = connMySQL.open();
+
+    //Con este objeto ejecutaremos la consulta:
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+
+    pstmt.setString(1, fecha1);
+    pstmt.setString(2, fecha2);
+    if (numero != null && !numero.isEmpty()) {
+        pstmt.setString(3, numero);
+    }
+
+    //Aquí guardaremos los resultados de la consulta:
+    ResultSet rs = pstmt.executeQuery();
+
+    List<Reporte> reportes = new ArrayList<>();
+
+    while (rs.next()) {
+        reportes.add(fill(rs));
+    }
+
+    rs.close();
+    pstmt.close();
+    connMySQL.close();
+
+    return reportes;
+}
+
+
+    public List<reporteTabla> getAll(String fecha1, String fecha2, String numero) throws Exception {
         //La consulta SQL a ejecutar:
-        String sql = "SELECT SUM(detalle_venta.cantidad) AS total_cantidad, galleta.precio, SUM(detalle_venta.cantidad) * galleta.precio AS precio_total, (SUM(detalle_venta.cantidad) * galleta.precio) * 0.7 AS costo "
+        String sql = "SELECT detalle_venta.idDetalle_venta, detalle_venta.cantidad, venta.fecha_venta, detalle_venta.cantidad * galleta.precio AS ingresos, (detalle_venta.cantidad * galleta.precio) * 0.7 AS gastos "
                 + "FROM venta "
                 + "JOIN detalle_venta ON venta.idVenta = detalle_venta.venta_idVenta "
                 + "JOIN galleta ON detalle_venta.idGalleta = galleta.idGalleta "
-                + "WHERE venta.fecha_venta BETWEEN ? AND ? "
-                + "AND detalle_venta.idGalleta = ?";
+                + "WHERE venta.fecha_venta BETWEEN ? AND ? ";
 
-        //Con este objeto nos vamos a conectar a la Base de Datos:
-        ConexionMySQL connMySQL = new ConexionMySQL();
-
-        //Abrimos la conexión con la Base de Datos:
-        Connection conn = connMySQL.open();
-
-        //Con este objeto ejecutaremos la consulta:
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-
-        pstmt.setString(1, fecha1);
-        pstmt.setString(2, fecha2);
-        pstmt.setString(3, numero);
-
-        //Aquí guardaremos los resultados de la consulta:
-        ResultSet rs = pstmt.executeQuery();
-
-        List<Reporte> reportes = new ArrayList<>();
-
-        while (rs.next()) {
-            reportes.add(fill(rs));
-        }
-
-        rs.close();
-        pstmt.close();
-        connMySQL.close();
-
-        return reportes;
+        if (numero != null && !numero.isEmpty()) {
+        sql += "AND detalle_venta.idGalleta = ? ";
     }
-    
-    public List<reporteTabla> getAll(String fecha1, String fecha2, String numero) throws Exception {
-        //La consulta SQL a ejecutar:
-         String sql = "SELECT detalle_venta.idDetalle_venta, detalle_venta.cantidad, venta.fecha_venta, detalle_venta.cantidad * galleta.precio AS ingresos, (detalle_venta.cantidad * galleta.precio) * 0.7 AS gastos "
-               + "FROM venta "
-               + "JOIN detalle_venta ON venta.idVenta = detalle_venta.venta_idVenta "
-               + "JOIN galleta ON detalle_venta.idGalleta = galleta.idGalleta "
-               + "WHERE venta.fecha_venta BETWEEN ? AND ? "
-               + "AND detalle_venta.idGalleta = ? "
-               + "ORDER BY detalle_venta.idDetalle_venta";
 
+        sql += "ORDER BY detalle_venta.idDetalle_venta";
+        
         //Con este objeto nos vamos a conectar a la Base de Datos:
         ConexionMySQL connMySQL = new ConexionMySQL();
 
@@ -76,7 +92,10 @@ public class ControllerReporte {
 
         pstmt.setString(1, fecha1);
         pstmt.setString(2, fecha2);
+
+        if (numero != null && !numero.isEmpty()) {
         pstmt.setString(3, numero);
+    }
 
         //Aquí guardaremos los resultados de la consulta:
         ResultSet rs = pstmt.executeQuery();
@@ -98,13 +117,12 @@ public class ControllerReporte {
         Reporte r = new Reporte();
 
         r.setTotal_cantidad(rs.getInt("total_cantidad"));
-        r.setPrecio(rs.getDouble("precio"));
         r.setPrecio_total(rs.getDouble("precio_total"));
         r.setCosto(rs.getDouble("costo"));
 
         return r;
     }
-    
+
     private reporteTabla filltabla(ResultSet rs) throws Exception {
         reporteTabla rt = new reporteTabla();
 
