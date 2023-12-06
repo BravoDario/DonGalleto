@@ -17,3 +17,15 @@ export function inicializarInventario() {
             });
 }
 //Falta tabla y método para cargar el inventario de galletas
+
+var verMaterialInventarioBtn = document.querySelector("#verMaterialBtnI");
+var verGalletaInventarioBtn = document.querySelector("#verGalletaBtn");
+export function verGalletaInventario() {
+    document.getElementById("table-inventario-galleta").style.display = "block";
+    document.getElementById("table-inventario-material").style.display = "none";
+}
+
+export function verMaterialInventario() {
+    document.getElementById("table-inventario-galleta").style.display = "none";
+    document.getElementById("table-inventario-material").style.display = "block";
+}
