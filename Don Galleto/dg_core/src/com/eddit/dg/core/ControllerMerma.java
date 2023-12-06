@@ -3,7 +3,9 @@ package com.eddit.dg.core;
 import com.eddit.dg.db.ConexionMySQL;
 import com.eddit.dg.model.Galleta;
 import com.eddit.dg.model.Inventario;
+import com.eddit.dg.model.Material;
 import com.eddit.dg.model.MermaGalleta;
+import com.eddit.dg.model.MermaMaterial;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,10 +80,45 @@ public class ControllerMerma {
                     rs.getInt("cantidad"),
                     galleta
             );
-            
+
             mermasGalleta.add(mermaGalleta);
         }
-        
+
         return mermasGalleta;
+    }
+
+    public List<MermaMaterial> getMermaMaterial() throws Exception {
+        List<MermaMaterial> mermasMaterial = new ArrayList<>();
+        ConexionMySQL conn = new ConexionMySQL();
+        Connection con = conn.open();
+        String sql = "SELECT * FROM vistamermamaterial";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+
+        ResultSet rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            Inventario inventario = new Inventario(
+                    rs.getInt("idInventario"),
+                    rs.getInt("existencia")
+            );
+            Material material = new Material(
+                    rs.getInt("idMaterial"),
+                    rs.getString("ingrediente"),
+                    rs.getInt("materialCantidad"),
+                    rs.getString("detalle_cantidad"),
+                    rs.getDouble("costo_material"),
+                    inventario
+            );
+            MermaMaterial mermaMaterial = new MermaMaterial(
+                    rs.getInt("idMermaMaterial"),
+                    rs.getInt("cantidad"),
+                    rs.getString("unidad"),
+                    material
+            );
+
+            mermasMaterial.add(mermaMaterial);
+        }
+
+        return mermasMaterial;
     }
 }

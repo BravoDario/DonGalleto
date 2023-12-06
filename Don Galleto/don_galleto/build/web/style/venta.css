@@ -152,10 +152,116 @@ i {
   width: 100px;
 }
 
-div.item.selected {
-  border: 2px solid red;
+/*ITEM SELECCIONADO*/
+div.item-venta.selected {
+    border: 2px solid red;
 }
 
-button.item.selected {
-  border: 2px solid red;
+/*BOTON SELECCIONADO*/
+button.item-venta.selected {
+    border: 2px solid red;
+}
+
+/*POSICION DE MODAL SIN ACCIONAR*/
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    color: black;
+    display: flex;
+    opacity: 0;
+    font-family: "Righteous", sans-serif;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+/*ESTILOS DENTRO DEL MODAL*/
+.modal-contenido{
+    margin: auto;
+    width: 50%;
+    max-width: 600px;
+    max-height: 50%;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    background-color: #fbe5d6;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+    font-family: "Righteous", sans-serif;
+}
+
+
+/*MODAL PARRAFOS*/
+.modal-paragraph{
+    margin-bottom: 10px;
+}
+
+/*ESTILOS PARA EL MODAL BOTONES*/
+.modal-close{
+    text-decoration: none;
+    color: white;
+    background-color: #bf8441;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: backgroun-color .3s;
+    font-family: "Righteous", sans-serif;
+}
+
+.modal-accept{
+    text-decoration: none;
+    color: white;
+    background-color: #bf8441;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: backgroun-color .3s;
+    font-family: "Righteous", sans-serif;
+}
+
+/*ESTILOS PARA EL MODAL BOTONES - ACCION*/
+.modal-close:hover{
+    color: black;
+    background-color: #975e35;
+}
+
+/*TRAER MODAL A PANTALLA*/
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+    font-family: "Righteous", sans-serif;
+}
+
+/*DISPOSICION DE TEXTO DENTRO DE LA VENTANA MODAL*/
+.columna-venta-modal {
+    display: flex;
+}
+
+/*ESTILOS GENERALES PARA LOS BOTONES DENTRO DEL MODAL*/
+.button-modal {
+    flex: 50%;
+    margin: 20px 40px 0 50px;
+}
+
+/*ESTILOS PATA LOS INPUTS DEL MODAL*/
+.input-modal {
+    height: 30px;
+    flex: 50%;
+    margin: 0 20px;
+    
 }

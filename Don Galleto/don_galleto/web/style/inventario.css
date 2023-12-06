@@ -95,7 +95,7 @@ i {
 }
 
 /*ASPECTOS GENERALES TABLA INVENTARIO*/
-.table-inventario {
+.table-inventario-material {
   height: 250px;
   margin: 0 auto;
   max-width: 800px;
@@ -103,14 +103,30 @@ i {
 }
 
 /*ASPECTOS HEADS TABLA INVENTARIO*/
-.table-inventario th {
+.table-inventario-material th {
   background-color: #6f2d14;
   color: white;
   position: sticky;
   top: 0;
 }
 
-/*TAMAÑO TABLA INVENTARIO*/
+/*ASPECTOS GENERALES TABLA INVENTARIO*/
+.table-inventario-galleta {
+  height: 250px;
+  margin: 0 auto;
+  max-width: 800px;
+  overflow-y: auto;
+}
+
+/*ASPECTOS HEADS TABLA INVENTARIO*/
+.table-inventario-galleta th {
+  background-color: #6f2d14;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+/*TAMAÑO TABLAS INVENTARIO*/
 table {
   border-collapse: collapse;
   width: 100%;

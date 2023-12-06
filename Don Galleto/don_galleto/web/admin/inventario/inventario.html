@@ -8,55 +8,27 @@
         </div>
         <br />
         <br />
-        <div class="table-inventario">
+        <div class="table-inventario-material" id="table-inventario-material">
             <table>
                 <thead>
                     <tr>
-                        <th>ID Inventario</th>
-                        <th>Existencia</th>
+                        <th>Ingrediente</th>
+                        <th>Cantidad</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tblbody">
+                </tbody>
+            </table>
+        </div>
+        <div class="table-inventario-galleta" id="table-inventario-galleta" style="display: none">
+            <table>
+                <thead>
                     <tr>
-                        <td>Galleta1</td>
-                        <td>--------</td>
+                        <th>Galleta1</th>
+                        <th>Galleta2</th>
                     </tr>
-                    <tr>
-                        <td>Galleta2</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta3</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta4</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta5</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta6</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta7</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta8</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta9</td>
-                        <td>--------</td>
-                    </tr>
-                    <tr>
-                        <td>Galleta10</td>
-                        <td>--------</td>
-                    </tr>
+                </thead>
+                <tbody id="tblbodygalleta">
                 </tbody>
             </table>
         </div>
@@ -67,6 +39,16 @@
             <button class="btn-inventario">
                 <b><i class="fa-solid fa-pen-to-square"></i></b>
             </button>
+            <button class="btn-inventario">
+                <b><i class="fa-solid fa-plus"></i></b>
+            </button>
+            <button class="btn-inventario" id="verGalletaBtn" onclick="verGalletaInventario();"> 
+                <b>Ver galleta</b>
+            </button>
+            <button class="btn-inventario" id="verMaterialBtnI" onclick="verMaterialInventario()">
+                <b>Ver material</b>
+            </button>
         </div>
+        <script src="../js/inventario.js"></script>
     </body>
 </html>
