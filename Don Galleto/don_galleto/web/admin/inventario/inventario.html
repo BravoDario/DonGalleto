@@ -8,7 +8,7 @@
         </div>
         <br />
         <br />
-        <div class="table-inventario">
+        <div class="table-inventario-material" id="table-inventario-material">
             <table>
                 <thead>
                     <tr>
@@ -20,6 +20,18 @@
                 </tbody>
             </table>
         </div>
+        <div class="table-inventario-galleta" id="table-inventario-galleta" style="display: none">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Galleta1</th>
+                        <th>Galleta2</th>
+                    </tr>
+                </thead>
+                <tbody id="tblbodygalleta">
+                </tbody>
+            </table>
+        </div>
         <div class="content-btn-inventario">
             <button class="btn-inventario">
                 <b><i class="fa-solid fa-floppy-disk"></i></b>
@@ -27,6 +39,16 @@
             <button class="btn-inventario">
                 <b><i class="fa-solid fa-pen-to-square"></i></b>
             </button>
+            <button class="btn-inventario">
+                <b><i class="fa-solid fa-plus"></i></b>
+            </button>
+            <button class="btn-inventario" id="verGalletaBtn" onclick="verGalletaInventario();"> 
+                <b>Ver galleta</b>
+            </button>
+            <button class="btn-inventario" id="verMaterialBtnI" onclick="verMaterialInventario()">
+                <b>Ver material</b>
+            </button>
         </div>
+        <script src="../js/inventario.js"></script>
     </body>
 </html>
