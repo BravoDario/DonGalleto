@@ -1,160 +1,311 @@
+
+
+
+
+
 /*ASPECTOS GENERALES*/
 body {
-  background-color: #fbe5d6;
-  font-family: "Righteous", sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: #fbe5d6;
+    font-family: "Righteous", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /*ENCABEZADO - TITULO WEB - MODULO - IMG*/
 .content-dg {
-  align-items: center;
-  background-color: #442d21;
-  border-bottom: 6px #c55a11 solid;
-  color: #fbe5d6;
-  display: flex;
-  height: 60px;
-  justify-content: space-between;
-  padding: 0 20px;
+    align-items: center;
+    background-color: #442d21;
+    border-bottom: 6px #c55a11 solid;
+    color: #fbe5d6;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 /*icono ubicacion*/
 .content-dg i {
-  color: #fbe5d6;
+    color: #fbe5d6;
 }
 
 /*IMAGEN SITIO WEB*/
 .img-logo-dg {
-  height: 55px;
-  width: 80px;
+    height: 55px;
+    width: 80px;
 }
 
 /*TITULO SITIO WEB*/
 .title-dg {
-  font-size: 25px;
-  letter-spacing: 18px;
-  margin: auto;
+    font-size: 25px;
+    letter-spacing: 18px;
+    margin: auto;
 }
 
 /*BARRA DE NAVEGACION DE MODULOS*/
 .nav {
-  background-color: #eda053;
-  border-bottom: 2px #442d21 solid;
-  border-top: 17px #6f2d14 solid;
-  display: flex;
-  height: 30px;
-  justify-content: space-between;
-  padding: 10px;
+    background-color: #eda053;
+    border-bottom: 2px #442d21 solid;
+    border-top: 17px #6f2d14 solid;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 /*ORIENTACION DE BARRA DE NAVEGACION */
 .container-fluid {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /*ROLE BUTTON BARRA DE NAVEGACION */
 .nav-link {
-  align-items: center;
-  border-right: 3px solid #6f2d14;
-  color: black;
-  display: flex;
-  justify-content: center;
-  padding: 0 75px; /*70*/
-  text-align: center;
-  text-decoration: none;
+    align-items: center;
+    border-right: 3px solid #6f2d14;
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding: 0 75px; /*70*/
+    text-align: center;
+    text-decoration: none;
 }
 
 /*QUITAR ULTIMA LINEA VERTICAL DE BARRA NAVEGACION*/
 .nav a:last-child {
-  border-right: none;
+    border-right: none;
 }
 
 /*ICONOS*/
 i {
-  color: #442d21;
-  font-size: 25px;
-  margin-right: 3px;
+    color: #442d21;
+    font-size: 25px;
+    margin-right: 3px;
 }
 
 /*DISPOSICION DE ELEMENTOS BUSQUEDA*/
 .grid-inventario {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
 }
 
 /*ICONO DE BUSQUEDA TAMAÑO*/
 .icon-search {
-  height: auto;
-  margin-left: 385px;
-  width: auto;
+    height: auto;
+    margin-left: 385px;
+    width: auto;
 }
 
 /*ASPECTOS GENERALES TABLA INVENTARIO*/
 .table-inventario-material {
-  height: 250px;
-  margin: 0 auto;
-  max-width: 800px;
-  overflow-y: auto;
+    height: 250px;
+    margin: 0 auto;
+    max-width: 800px;
+    overflow-y: auto;
 }
 
 /*ASPECTOS HEADS TABLA INVENTARIO*/
 .table-inventario-material th {
-  background-color: #6f2d14;
-  color: white;
-  position: sticky;
-  top: 0;
+    background-color: #6f2d14;
+    color: white;
+    position: sticky;
+    top: 0;
 }
 
 /*ASPECTOS GENERALES TABLA INVENTARIO*/
 .table-inventario-galleta {
-  height: 250px;
-  margin: 0 auto;
-  max-width: 800px;
-  overflow-y: auto;
+    height: 250px;
+    margin: 0 auto;
+    max-width: 800px;
+    overflow-y: auto;
 }
 
 /*ASPECTOS HEADS TABLA INVENTARIO*/
 .table-inventario-galleta th {
-  background-color: #6f2d14;
-  color: white;
-  position: sticky;
-  top: 0;
+    background-color: #6f2d14;
+    color: white;
+    position: sticky;
+    top: 0;
 }
 
 /*TAMAÑO TABLAS INVENTARIO*/
 table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 /*OTROS ESTILOS DENTRO DE LA TABLA*/
 th,
 td {
-  background-color: white;
-  border: 1px solid black;
-  padding: 8px 16px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 /*CONTENEDOR - DISPOSICION DE BOTONES*/
 .content-btn-inventario {
-  align-items: center;
-  display: flex;
-  justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /*ESTILOS DE BOTONES*/
 .btn-inventario {
-  background-color: #bf8441;
-  border: 2px solid #976e35;
-  color: black;
-  cursor: pointer;
-  height: 50px;
-  margin: 25px 50px;
-  padding: 10px 20px;
-  width: 100px;
+    background-color: #bf8441;
+    border: 2px solid #976e35;
+    color: black;
+    cursor: pointer;
+    height: 50px;
+    margin: 25px 50px;
+    padding: 10px 20px;
+    width: 100px;
+}
+
+.btn-save{
+    height: 35px;
+    width: 75px;
+    margin: 0;
+    padding: 5px 20px;
+}
+
+th>*{
+    display: inline-flex;
+    align-items: center;
+}
+
+.add-obj>th{
+    background-color: #6f2d14DD;
+    z-index: 0;
+    position: relative;
+}
+
+.active-btn {
+  background-color: #956b3b;
+  color: white;
+}
+
+.btn-disabled{
+    filter: grayscale(80%);
+}
+
+.sl-inventario{
+    width: 9rem;
+    margin:0;
+}
+th>*{
+    margin: 0;
+}
+
+
+/*POSICION DE MODAL SIN ACCIONAR*/
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    color: black;
+    display: flex;
+    opacity: 0;
+    font-family: "Righteous", sans-serif;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+/*ESTILOS DENTRO DEL MODAL*/
+.modal-contenido{
+    margin: auto;
+    width: 50%;
+    max-width: 600px;
+    max-height: 50%;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    background-color: #fbe5d6;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+    font-family: "Righteous", sans-serif;
+}
+
+
+/*MODAL PARRAFOS*/
+.modal-paragraph{
+    margin-bottom: 10px;
+}
+
+/*ESTILOS PARA EL MODAL BOTONES*/
+.modal-close{
+    text-decoration: none;
+    color: white;
+    background-color: #bf8441;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: backgroun-color .3s;
+    font-family: "Righteous", sans-serif;
+}
+
+.modal-accept{
+    text-decoration: none;
+    color: white;
+    background-color: #bf8441;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: backgroun-color .3s;
+    font-family: "Righteous", sans-serif;
+}
+
+/*ESTILOS PARA EL MODAL BOTONES - ACCION*/
+.modal-close:hover{
+    color: black;
+    background-color: #975e35;
+}
+
+
+/*ESTILOS PARA EL MODAL BOTONES - ACCION*/
+.modal-accept:hover{
+    color: black;
+    background-color: #975e35;
+}
+
+/*TRAER MODAL A PANTALLA*/
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+    font-family: "Righteous", sans-serif;
+}
+
+/*DISPOSICION DE TEXTO DENTRO DE LA VENTANA MODAL*/
+.columna-venta-modal {
+    display: flex;
+}
+
+/*ESTILOS GENERALES PARA LOS BOTONES DENTRO DEL MODAL*/
+.button-modal {
+    flex: 50%;
+    margin: 20px 40px 0 50px;
+}
+
+/*ESTILOS PATA LOS INPUTS DEL MODAL*/
+.input-modal {
+    height: 30px;
+    flex: 50%;
+    margin: 0 20px;
+    
 }
