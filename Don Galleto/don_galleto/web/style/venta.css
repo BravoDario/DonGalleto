@@ -237,6 +237,13 @@ button.item-venta.selected {
     background-color: #975e35;
 }
 
+
+/*ESTILOS PARA EL MODAL BOTONES - ACCION*/
+.modal-accept:hover{
+    color: black;
+    background-color: #975e35;
+}
+
 /*TRAER MODAL A PANTALLA*/
 .modal--show {
     opacity: 1;
