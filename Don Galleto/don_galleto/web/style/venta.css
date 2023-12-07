@@ -146,20 +146,26 @@ i {
   border: none;
   border-radius: 0 8px 8px 0;
   color: black;
-  cursor: pointer;
+  
   height: auto;
   padding: 5px 10px;
   width: 100px;
 }
 
+/*BOTON PARA GUARDAR VENTA*/
+.guardar-button-venta b i:hover {
+  cursor: pointer;
+  color: white;
+}
+
 /*ITEM SELECCIONADO*/
 div.item-venta.selected {
-    border: 2px solid red;
+    border: 3px solid white;
 }
 
 /*BOTON SELECCIONADO*/
 button.item-venta.selected {
-    border: 2px solid red;
+    border: 3px solid white;
 }
 
 /*POSICION DE MODAL SIN ACCIONAR*/
@@ -279,4 +285,37 @@ button.item-venta.selected {
 
 .modal-label-2{
     margin-top: 5px;
+}
+
+.img-cookie-venta:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/*ESTILOS PARA BOTONES TIPOS DE PAGOS*/
+.button-pagos-venta .item-venta:hover{
+  color: white;
+  cursor: pointer;
+}
+
+/*SCROLL TABLA VENTA Y TAMAÑOS*/
+.table-ventas{
+  height: 250px;
+  margin: 50px auto;
+  max-width: 800px;
+  overflow-y: auto;
+}
+
+/*ORIENTACION DE TABLA*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*ESTILOS CELDAS TABLA*/
+th,
+td {
+  background-color: white;
+  border: 1px solid black;
+  padding: 8px 16px;
 }
