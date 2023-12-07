@@ -1,25 +1,42 @@
 export function inicializarInventario() {
-    let url = "./api/inventario/getingredientes"
+    getInventarioMaterial();
+    getInventarioGalleta();
+}
+
+function getInventarioMaterial() {
+    let ingredientes = JSON.parse(window.localStorage.getItem("inventarioMaterial"));
     let contentTable = "";
-    fetch(url)
-            .then(res => res.ok ? res.json() : Promise.reject(res))
-            .then(data => {
-                let ingredientes = data;
-                ingredientes.map(Dingrediente => {
-                    let {ingrediente, detalle_cantidad, inventario} = Dingrediente;
-                    contentTable += `
+
+    ingredientes.map(cIngrediente => {
+        let {ingrediente, detalle_cantidad, inventario} = cIngrediente;
+        contentTable += `
                     <tr>
                         <td>${ingrediente}</td>
                         <td>${inventario.existencia} ${detalle_cantidad}</td>
                     </tr>`;
-                })
-                document.getElementById("tblbody").innerHTML = contentTable;
-            });
+    })
+    document.getElementById("tblbodymaterial").innerHTML = contentTable;
 }
-//Falta tabla y método para cargar el inventario de galletas
+
+function getInventarioGalleta() {
+    let galletas = JSON.parse(window.localStorage.getItem("inventarioGalletas"));
+    let contentTable = "";
+
+    galletas.map(galleta => {
+        let {nombre, precio, inventario} = galleta;
+        contentTable += `
+                    <tr>
+                        <td>${nombre}</td>
+                        <td>${inventario.existencia}</td>
+                        <td>$ ${precio}</td>
+                    </tr>`;
+    })
+    document.getElementById("tblbodygalleta").innerHTML = contentTable;
+}
 
 var verMaterialInventarioBtn = document.querySelector("#verMaterialBtnI");
 var verGalletaInventarioBtn = document.querySelector("#verGalletaBtn");
+
 export function verGalletaInventario() {
     document.getElementById("table-inventario-galleta").style.display = "block";
     document.getElementById("table-inventario-material").style.display = "none";

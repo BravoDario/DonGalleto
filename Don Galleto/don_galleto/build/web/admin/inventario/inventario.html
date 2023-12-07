@@ -8,15 +8,34 @@
         </div>
         <br />
         <br />
-        <div class="table-inventario">
+        <div class="table-inventario-material" id="table-inventario-material">
             <table>
                 <thead>
                     <tr>
-                        <th>Ingrediente</th>
+                        <th colspan="2">Inventario de materiales</th>
+                    </tr>
+                    <tr>
+                        <th>Material</th>
                         <th>Cantidad</th>
                     </tr>
                 </thead>
-                <tbody id="tblbody">
+                <tbody id="tblbodymaterial">
+                </tbody>
+            </table>
+        </div>
+        <div class="table-inventario-galleta" id="table-inventario-galleta" style="display: none">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3">Inventario de galletas</th>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio $</th>
+                    </tr>
+                </thead>
+                <tbody id="tblbodygalleta">
                 </tbody>
             </table>
         </div>
@@ -27,6 +46,16 @@
             <button class="btn-inventario">
                 <b><i class="fa-solid fa-pen-to-square"></i></b>
             </button>
+            <button class="btn-inventario">
+                <b><i class="fa-solid fa-plus"></i></b>
+            </button>
+            <button class="btn-inventario" id="verGalletaBtn" onclick="cm.verGalletaInventario();"> 
+                <b>Ver galleta</b>
+            </button>
+            <button class="btn-inventario" id="verMaterialBtnI" onclick="cm.verMaterialInventario()">
+                <b>Ver material</b>
+            </button>
         </div>
+        <script src="../js/inventario.js"></script>
     </body>
 </html>

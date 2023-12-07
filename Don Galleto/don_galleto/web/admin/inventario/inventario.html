@@ -12,11 +12,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Ingrediente</th>
+                        <th colspan="2">Inventario de materiales</th>
+                    </tr>
+                    <tr>
+                        <th>Material</th>
                         <th>Cantidad</th>
                     </tr>
                 </thead>
-                <tbody id="tblbody">
+                <tbody id="tblbodymaterial">
                 </tbody>
             </table>
         </div>
@@ -24,8 +27,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Galleta1</th>
-                        <th>Galleta2</th>
+                        <th colspan="3">Inventario de galletas</th>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio $</th>
                     </tr>
                 </thead>
                 <tbody id="tblbodygalleta">
@@ -42,10 +49,10 @@
             <button class="btn-inventario">
                 <b><i class="fa-solid fa-plus"></i></b>
             </button>
-            <button class="btn-inventario" id="verGalletaBtn" onclick="verGalletaInventario();"> 
+            <button class="btn-inventario" id="verGalletaBtn" onclick="cm.verGalletaInventario();"> 
                 <b>Ver galleta</b>
             </button>
-            <button class="btn-inventario" id="verMaterialBtnI" onclick="verMaterialInventario()">
+            <button class="btn-inventario" id="verMaterialBtnI" onclick="cm.verMaterialInventario()">
                 <b>Ver material</b>
             </button>
         </div>

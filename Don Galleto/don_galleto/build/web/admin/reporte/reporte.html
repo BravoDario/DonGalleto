@@ -1,28 +1,31 @@
 <html>
     <body>
-        
+
         <div class="columnas-reporte">
             <div class="img-reporte-content">
-                <img class="img-reporte" src="../don_galleto/img/LOGO_DONGALLETO_SF.webp" />
+                <canvas class="img-reporte" id="myChart"></canvas>
             </div>
             <div class="table-reporte">
+                <input type="date" id="fecha" name="fecha">
+                <label> a </label>
+                <input type="date" id="fecha2" name="fecha2">
                 <select name="ordenar-por" id="ordenar-por">
-                    <option value="Ordenar por" selected>Ordenar por</option>
-                    <option value="---">---</option>
-                    <option value="---">---</option>
-                    <option value="---">---</option>
-                    <option value="---">---</option>
+                    <option value="" selected>Todo</option>
+                    <option value="1">Galleta de chocolate</option>
+                    <option value="2">Galleta de vainilla</option>
+                    <option value="3">Galleta de naranja</option>
+                    <option value="4">Galleta de nuez</option>
+                    <option value="5">Galleta adornada</option>
+                    <option value="6">Galleta de fresa</option>
+                    <option value="7">Galleta de almendra</option>
+                    <option value="8">Galleta de coco</option>
+                    <option value="9">Galleta sola</option>
+                    <option value="10">Galleta azucarada</option>
                 </select>
-                <select name="orden-reporte" id="orden-reportes">
-                    <option value="reporte" selected>Reporte</option>
-                    <option value="---">---</option>
-                    <option value="---">---</option>
-                    <option value="---">---</option>
-                    <option value="---">---</option>
-                </select>
-                <table>
+                <button onclick="cm.buscar();">buscar</button>
+                <table id="tbodytablaReporte">
                     <tr>
-                        <th>Articulo</th>
+                        <th>Cantidad</th>
                         <th>Fecha</th>
                         <th>Ingreso</th>
                         <th>Gastos</th>

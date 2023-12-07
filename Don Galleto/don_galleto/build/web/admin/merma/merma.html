@@ -3,9 +3,20 @@
         <div class="table-merma" id="table-merma">
             <table>
                 <thead>
-                    <tr>
+                    <tr style="z-index: 1; position: relative;">
                         <th>Galleta</th>
                         <th>Cantidad</th>
+                    </tr>
+                    <tr style="z-index: 0; position: relative;">
+                        <th>
+                            <select id="slMermaGalleta">
+                                <option value="null">Seleccionar Galleta</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input type="number" name="name">
+                            <label id="lblCantidadMermaGalleta"></label>
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="tblbodymermagalleta"></tbody>
@@ -14,9 +25,20 @@
         <div class="table-material" id="table-material" style="display: none">
             <table>
                 <thead>
-                    <tr>
+                    <tr style="z-index: 1; position: relative;">
                         <th>Material</th>
                         <th>Cantidad</th>
+                    </tr>
+                    <tr style="z-index: 0; position: relative;">
+                        <th>
+                            <select id="slMermaMaterial">
+                                <option value="null">Seleccionar material</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input type="number" name="name">
+                            <label id="lblCantidadMermaMaterial"></label>
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="tblbodymermamaterial">

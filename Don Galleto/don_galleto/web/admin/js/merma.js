@@ -13,9 +13,21 @@ export function verMaterial() {
 export function inicializarMerma() {
     getMermaGalleta();
     getMermaMaterial();
+    getGalletas()
+    
 }
 
-function getMermaGalleta(){
+function getGalletas(){
+    let galletas = JSON.parse(window.localStorage.getItem("inventarioGalletas"));
+    
+    let slContenido = document.getElementById("slMermaGalleta").innerHTML;
+    galletas.map(galleta=>{
+        slContenido += `<option value="${galleta.idGalleta}">${galleta.nombre}</option>`
+    })
+    document.getElementById("slMermaGalleta").innerHTML = slContenido;
+}
+
+function getMermaGalleta() {
     let url = "./api/merma/getMermaGalletas"
     let contentTable = "";
     fetch(url)
@@ -49,7 +61,7 @@ function getMermaMaterial() {
                         <td>${cantidad} ${unidad}</td>
                     </tr>`;
                 })
-                document.getElementById("tblbodymermamaterial").innerHTML = contentTable;
+                document.getElementById("tblbodymermamaterial").innerHTML += contentTable;
             });
 }
 

@@ -14,25 +14,25 @@
         },
         {
             "id": "3",
-            "nombre": "Galleta de avena",
+            "nombre": "Galleta de naranja",
             "peso": "60",
             "precio": "12"
         },
         {
             "id": "4",
-            "nombre": "Galleta de mantequilla",
+            "nombre": "Galleta de nuez",
             "peso": "55",
             "precio": "11"
         },
         {
             "id": "5",
-            "nombre": "Galleta de coco",
+            "nombre": "Galleta adornada",
             "peso": "50",
             "precio": "10"
         },
         {
             "id": "6",
-            "nombre": "Galleta de nuez",
+            "nombre": "Galleta de fresa",
             "peso": "65",
             "precio": "13"
         },
@@ -44,19 +44,19 @@
         },
         {
             "id": "8",
-            "nombre": "Galleta de jengibre",
+            "nombre": "Galleta de coco",
             "peso": "55",
             "precio": "11"
         },
         {
             "id": "9",
-            "nombre": "Galleta de limón",
+            "nombre": "Galleta sola",
             "peso": "50",
             "precio": "10"
         },
         {
             "id": "10",
-            "nombre": "Galleta de canela",
+            "nombre": "Galleta azucarada",
             "peso": "55",
             "precio": "11"
         }

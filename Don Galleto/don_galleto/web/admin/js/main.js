@@ -117,3 +117,24 @@ function cargarModuloReceta() {
             }
             );
 }
+
+function getInventarioMaterial() {
+    let url = "./api/inventario/getingredientes"
+    fetch(url)
+            .then(res => res.ok ? res.json() : Promise.reject(res))
+            .then(data => {
+                window.localStorage.setItem("inventarioMaterial", JSON.stringify(data))
+            });
+}
+
+function getInventarioGalleta() {
+    let url = "./api/inventario/getgalletas"
+    fetch(url)
+            .then(res => res.ok ? res.json() : Promise.reject(res))
+            .then(data => {
+                window.localStorage.setItem("inventarioGalletas", JSON.stringify(data))
+            });
+}
+
+getInventarioMaterial() 
+getInventarioGalleta();
