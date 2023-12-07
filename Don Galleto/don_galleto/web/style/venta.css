@@ -184,7 +184,7 @@ button.item-venta.selected {
 .modal-contenido{
     margin: auto;
     width: 50%;
-    max-width: 600px;
+    max-width: 700px;
     max-height: 50%;
     border-radius: 6px;
     padding: 3em 2.5em;
@@ -201,7 +201,7 @@ button.item-venta.selected {
 
 /*MODAL PARRAFOS*/
 .modal-paragraph{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 /*ESTILOS PARA EL MODAL BOTONES*/
@@ -271,4 +271,12 @@ button.item-venta.selected {
     flex: 50%;
     margin: 0 20px;
     
+}
+
+.modal-label{
+    margin-top: 15px;
+}
+
+.modal-label-2{
+    margin-top: 5px;
 }
