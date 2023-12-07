@@ -3,19 +3,22 @@
         <div class="table-merma" id="table-merma">
             <table>
                 <thead>
+                    
+                    <tr>
+                        <th colspan="2">Merma de galletas</th>
+                    </tr>
                     <tr style="z-index: 1; position: relative;">
                         <th>Galleta</th>
                         <th>Cantidad</th>
                     </tr>
-                    <tr style="z-index: 0; position: relative;">
+                    <tr class="add-obj">
                         <th>
                             <select id="slMermaGalleta">
                                 <option value="null">Seleccionar Galleta</option>
                             </select>
                         </th>
                         <th>
-                            <input type="number" name="name">
-                            <label id="lblCantidadMermaGalleta"></label>
+                            <input type="number" name="name" placeholder="Cantidad de galletas">
                         </th>
                     </tr>
                 </thead>
@@ -25,11 +28,14 @@
         <div class="table-material" id="table-material" style="display: none">
             <table>
                 <thead>
+                    <tr>
+                        <th colspan="2">Merma de materiales</th>
+                    </tr>
                     <tr style="z-index: 1; position: relative;">
                         <th>Material</th>
                         <th>Cantidad</th>
                     </tr>
-                    <tr style="z-index: 0; position: relative;">
+                    <tr class="add-obj">
                         <th>
                             <select id="slMermaMaterial">
                                 <option value="null">Seleccionar material</option>
@@ -50,10 +56,10 @@
                 <b><i class="fa-solid fa-plus"></i></b>
             </button>
             <button class="btn-merma" id="verMermaBtn" onclick="cm.verMerma(); this.classList.toggle('active-btn'); verMaterialBtn.classList.remove('active-btn');">
-                <b>Ver merma</b>
+                <b>Merma Galleta</b>
             </button>
             <button class="btn-merma" id="verMaterialBtn" onclick="cm.verMaterial(); this.classList.toggle('active-btn'); verMermaBtn.classList.remove('active-btn');">
-                <b>Ver material</b>
+                <b>Merma Material</b>
             </button>
         </div>
         <script src="../js/merma.js"></script>

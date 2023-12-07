@@ -14,9 +14,31 @@
                     <tr>
                         <th colspan="2">Inventario de materiales</th>
                     </tr>
-                    <tr>
+                    <tr class="tblhead" style="z-index: 1; position: relative;">
                         <th>Material</th>
                         <th>Cantidad</th>
+                    </tr>
+                    <tr class="add-obj">
+                        <th>
+                            <input type="text" placeholder="Nombre del ingrediente" id="txtMaterial" name="name">
+                        </th>
+                        <th>
+                            <input type="number" placeholder="Cantidad del ingrediente" id="txtCantidad">
+                            
+                            <select id="slUnidad" class="sl-inventario" disabled="" >
+                                <option selected value="null">Seleccionar unidad</option>
+                                <option value="g">Gramos</option>
+                                <option value="kg">Kilogramos</option>
+                                <option value="L">Litros</option>
+                                <option value="O">Otro</option>
+                            </select>
+                            
+                            $<input type="number" placeholder="Costo $$" id="txtCosto">
+
+                            <button id="btnSave" class="btn btn-inventario btn-save btn-disabled"  onclick="cm.saveInventario()">
+                                <b><i class="fa-solid fa-floppy-disk"></i></b>
+                            </button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="tblbodymaterial">
@@ -29,33 +51,55 @@
                     <tr>
                         <th colspan="3">Inventario de galletas</th>
                     </tr>
-                    <tr>
+                    <tr class="tblheadG" style="z-index: 1; position: relative;">
                         <th>Nombre</th>
                         <th>Cantidad</th>
                         <th>Precio $</th>
+                    </tr>
+                    <tr class="add-obj">
+                        <th>
+                            <input id="txtNombre" type="text" name="name" placeholder="Nombre de galleta"/>
+                        </th>
+                        <th>
+                            <input id="cantidad" type="number" placeholder="Cantidad de la galleta"/>
+                        </th>
+                        <th>
+                            $<input id="txtPrecio" type="number" placeholder="Precio de la galleta"/>
+                            
+                            <button id="btnSaveG" class="btn btn-inventario btn-save btn-disabled" disabled onclick="cm.saveGalleta()">
+                                <b><i class="fa-solid fa-floppy-disk"></i></b>
+                            </button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="tblbodygalleta">
                 </tbody>
             </table>
         </div>
+        <div></div>
         <div class="content-btn-inventario">
             <button class="btn-inventario">
-                <b><i class="fa-solid fa-floppy-disk"></i></b>
-            </button>
-            <button class="btn-inventario">
                 <b><i class="fa-solid fa-pen-to-square"></i></b>
-            </button>
-            <button class="btn-inventario">
-                <b><i class="fa-solid fa-plus"></i></b>
             </button>
             <button class="btn-inventario" id="verGalletaBtn" onclick="cm.verGalletaInventario();"> 
                 <b>Ver galleta</b>
             </button>
-            <button class="btn-inventario" id="verMaterialBtnI" onclick="cm.verMaterialInventario()">
+            <button class="btn-inventario active-btn" id="verMaterialBtnI" onclick="cm.verMaterialInventario();"> 
                 <b>Ver material</b>
             </button>
         </div>
+        <!-- Modal Inventario -->
+        <section class="modal">
+            <div class="modal-contenido">
+                <p id="modalText" class="modal-paragraph">---</p>
+                <div class="columna-venta-modal">
+                </div>
+                <div class="columna-venta-modal">
+                    <button class="modal-close button-modal"><span>Cerrar</span></button>
+                    <button class="modal-accept button-modal"><span>Aceptar</span></button>
+                </div>
+            </div>
+        </section>
         <script src="../js/inventario.js"></script>
     </body>
 </html>

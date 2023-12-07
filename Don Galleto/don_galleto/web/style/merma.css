@@ -107,7 +107,7 @@ table {
 }
 
 /*ESTILOS ENCABEZADOS TABLA*/
-.table-merma thead th {
+.table-merma th {
   background-color: #6f2d14;
   color: white;
   position: sticky;
@@ -115,7 +115,7 @@ table {
 }
 
 /*ESTILOS ENCABEZADOS TABLA*/
-.table-material thead th {
+.table-material th {
   background-color: #6f2d14;
   color: white;
   position: sticky;
@@ -154,10 +154,29 @@ td {
   background-color: #956b3b;
   color: white;
 }
+
 .content-btn-merma .btn-merma b i:hover{
-    color: white;
+  color: white;
 }
 
 .content-btn-merma .btn-merma:hover{
-    color: white;
+  color: white;
+}
+
+.btn-save{
+    height: 35px;
+    width: 75px;
+    margin: 0;
+    padding: 5px 20px;
+}
+
+th>*{
+    display: inline-flex;
+    align-items: center;
+}
+
+.add-obj>th{
+    background-color: #6f2d14DD;
+    z-index: 0;
+    position: relative;
 }
