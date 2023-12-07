@@ -40,17 +40,17 @@ export function selectImage(imageElement, panelId) {
 
         switch (val2) {
             case "A":
-                et.textContent = "pesos";
+                et.textContent = "Pesos: ";
 
                 break;
             case "B":
-                et.textContent = "gr";
+                et.textContent = "Gr: ";
                 break;
             case "C":
-                et.textContent = "caja";
+                et.textContent = "Caja: ";
                 break;
             case "D":
-                et.textContent = "pieza";
+                et.textContent = "Pieza: ";
                 break;
                 // puedes agregar más casos aquí...
             default:
