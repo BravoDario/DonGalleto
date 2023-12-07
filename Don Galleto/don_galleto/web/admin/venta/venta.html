@@ -46,13 +46,12 @@
         </div>
         <br>
         <br>
-        <div>
+        <div class="table-ventas">
             <table id="imageTable">
                 <tr>
-                    <td>Nombre</td>
-                    <td>Cantidad</td>
-                    <td>Precio</td>
-
+                    <th style="background-color: #6f2d14; color: white; position: sticky; top: 0;">Nombre</th>
+                    <th style="background-color: #6f2d14; color: white; position: sticky; top: 0;">Cantidad</th>
+                    <th style="background-color: #6f2d14; color: white; position: sticky; top: 0;">Precio</th>
                 </tr>
             </table>
         </div>
@@ -61,10 +60,10 @@
             <div class="modal-contenido">
                 <div class="columna-venta-modal">
                     <label class="modal-label">Tipo: </label>&nbsp;&nbsp;
-                <p id="modalText" class="modal-paragraph">---</p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p id="modalText" class="modal-paragraph">---</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <p id="modalText2" class="modal-paragraph">---</p>
-                    </div>
+                </div>
                 <div class="columna-venta-modal">
                     <label class="modal-label-2">Cantidad:</label>
                     <input onchange="cm.cantidadGalleta()" id="inpcant" type="number" placeholder="cantidad" class="input-modal">
