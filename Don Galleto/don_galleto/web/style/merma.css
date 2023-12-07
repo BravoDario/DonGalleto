@@ -154,3 +154,10 @@ td {
   background-color: #956b3b;
   color: white;
 }
+.content-btn-merma .btn-merma b i:hover{
+    color: white;
+}
+
+.content-btn-merma .btn-merma:hover{
+    color: white;
+}
